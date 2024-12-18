@@ -7,23 +7,29 @@ document.getElementById("parentContianer").appendChild(formTitle);
 formTitle.style.fontsize = "60px";
 formTitle.style.fontWeight = "bold";
 
-
+const firstNameContainer = document.createElement("div");
+firstNameContainer.id="firstName_Container"
+document.getElementById("parentContianer").appendChild(firstNameContainer);
 
 const firstName=document.createElement("p");
 firstName.innerHTML="First Name";
-document.getElementById("parentContianer").appendChild(firstName);
+document.getElementById("firstName_Container").appendChild(firstName);
 firstName.style.fontsize = "30px";
 
+const lastNameContainer = document.createElement("div");
+lastNameContainer.id="lastName_Container"
+document.getElementById("parentContianer").appendChild(lastNameContainer);
+
 const firstInput=document.createElement("input");
-document.getElementById("parentContianer").appendChild(firstInput);
+document.getElementById("firstName_Container").appendChild(firstInput);
 
 const lastName=document.createElement("p");
 lastName.innerHTML="Last Name";
-document.getElementById("parentContianer").appendChild(lastName);
+document.getElementById("lastName_Container").appendChild(lastName);
 lastName.style.fontsize = "30px";
 
 const lastInput=document.createElement("input");
-document.getElementById("parentContianer").appendChild(lastInput);
+document.getElementById("lastName_Container").appendChild(lastInput);
 //end davhar div uusgeh
 const ageContainer = document.createElement("div");
 ageContainer.id="age_Container"
@@ -114,6 +120,29 @@ button.addEventListener("click", () => {
   ) {
     alert("Бүх өгөгдөл зөв байна!");
   }
+//first name shalgah
+if (firstInput.value.trim() !== "" || isNaN(Number(firstInput.value))) {
+  console.log("=========================");
+  console.log(true);
+  console.log("=========================");
+} else {
+  const warningAge = document.createElement("p");
+  warningAge.innerHTML = "Please enter name.";
+  warningAge.style.color = "red";
+  document.getElementById("firstName_Container").appendChild(warningAge);
+}
+//lastname shalgah
+if (lastInput.value.trim() !== "" || isNaN(Number(firstInput.value))) {
+  console.log("=========================");
+  console.log(true);
+  console.log("=========================");
+} else {
+  const warningAge = document.createElement("p");
+  warningAge.innerHTML = "Please enter lastname.";
+  warningAge.style.color = "red";
+  document.getElementById("lastName_Container").appendChild(warningAge);
+}
+
 
   // Насaa шалгах
   if (!isNaN(Number(ageInput.value))) {
